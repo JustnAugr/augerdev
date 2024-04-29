@@ -4,16 +4,22 @@ import { EnvelopeIcon, MoonIcon, BriefcaseIcon, CommandLineIcon, DocumentTextIco
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const interBold = Inter({ subsets: ["latin"], weight: '700' });
 
 export default function Home() {
-  const [darkState, setDarkState] = useState(false);
   const [hoverText, setHoverText] = useState('');
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  console.log(resolvedTheme);
 
   return (
-    <div className={darkState ? 'dark' : ''}>
+    <div>
       <main className="bg-slate-50 px-10 bg-gradient-to-b to-white from-teal-50 dark:to-stone-800 dark:from-stone-900">
         <section className="min-h-screen">
           <div className="py-10 mb-12 flex justify-between">
@@ -23,10 +29,13 @@ export default function Home() {
               <h1>auger.dev</h1>
             </div>
             {
-              !darkState ?
-                (<MoonIcon className="w-8 h-8 cursor-pointer" onClick={() => setDarkState(!darkState)} />)
+              !mounted ?
+                <></>
                 :
-                (<SunIcon className="w-8 h-8 cursor-pointer text-white" onClick={() => setDarkState(!darkState)} />)
+                resolvedTheme === 'dark' ?
+                  (<SunIcon className="w-8 h-8 cursor-pointer text-white" onClick={() => setTheme('light')} />)
+                  :
+                  (<MoonIcon className="w-8 h-8 cursor-pointer" onClick={() => setTheme('dark')} />)
             }
           </div>
           <div className="text-center pt-10">
