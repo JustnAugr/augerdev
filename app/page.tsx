@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div>
       <main className="bg-slate-50 px-10 bg-gradient-to-b to-white from-teal-50 dark:to-stone-800 dark:from-stone-900">
-        <section className="min-h-screen">
+        <section className="min-h-svh flex flex-col">
           <div className="pt-10 mb-12 flex justify-between">
             <div className="flex">
               <h1>justin</h1>
@@ -88,6 +88,11 @@ export default function Home() {
           {hoverText && <div className='flex justify-center pt-5 text-teal-800 dark:text-emerald-400'>
             {hoverText}
           </div>}
+          <div className="absolute bottom-5 self-center">
+            <p className="text-sm text-gray-700 dark:text-stone-400">
+              brought to us by next.js
+            </p>
+          </div>
         </section>
       </main>
     </div>
