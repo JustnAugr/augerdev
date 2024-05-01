@@ -3,11 +3,13 @@
 import { EnvelopeIcon, MoonIcon, BriefcaseIcon, CommandLineIcon, DocumentTextIcon, SunIcon } from "@heroicons/react/24/outline";
 import Nata from "./nata";
 import Title from "./title";
-import { Inter } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-const interBold = Inter({ subsets: ["latin"], weight: '700' });
+
+const grotesk = Schibsted_Grotesk({ subsets: ["latin"], weight: '400' });
+const groteskBold = Schibsted_Grotesk({ subsets: ["latin"], weight: '700' });
 
 export default function Home() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -18,7 +20,7 @@ export default function Home() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div>
+    <div className={grotesk.className}>
       <main className="bg-slate-50 px-10 bg-gradient-to-b to-white from-teal-50 dark:to-stone-800 dark:from-stone-900">
         <section className="min-h-svh flex flex-col">
           <div className="pt-10 mb-12 flex justify-between">
@@ -42,7 +44,7 @@ export default function Home() {
             <div className="order-1 flex justify-center invisible transition ease-in-out duration-500 peer-has-[:hover]:-translate-y-2 peer-has-[:hover]:visible">
               click on Nata for a surprise!
             </div>
-            <h2 className={`order-3 text-3xl md:text-5xl lg:text-5xl py-2 pb-4 text-teal-800 ${interBold.className} dark:text-emerald-400`}>Justin Auger</h2>
+            <h2 className={`order-3 text-3xl md:text-5xl lg:text-5xl py-2 pb-4 text-teal-800 ${groteskBold.className} dark:text-emerald-400`}>Justin Auger</h2>
             <Title />
           </div>
           <div className="flex justify-center gap-10 pt-5 text-gray-800">
