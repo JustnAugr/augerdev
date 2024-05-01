@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               <h2 className={`order-3 text-3xl md:text-5xl lg:text-5xl md:py-2 pb-2 md:pb-4 text-teal-800 ${groteskBold.className} dark:text-emerald-400`}>Justin Auger</h2>
               <Title />
-              <div className="order-4 flex justify-center gap-10 pt-2 md:pt-5 text-gray-800">
+              <div className="order-4 flex justify-center gap-10 pt-5 text-gray-800">
                 <Link href="mailto:justin@auger.dev">
                   <EnvelopeIcon
                     className="w-8 h-8 md:w-10 md:h-10 cursor-pointer hover:text-teal-700 dark:text-white dark:hover:text-emerald-400"
