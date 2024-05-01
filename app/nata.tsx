@@ -7,7 +7,7 @@ export default function Nata() {
     const images = [];
     for (let i = 1; i <= 15; i++ ) {
       images.push(<Image
-        className="rounded-3xl max-md:max-w-50 max-md:max-h-50 w-150 h-150"
+        className="rounded-3xl max-md:max-w-50 max-md:max-h-50 w-150 h-150 hover:cursor-pointer"
         src={`/cat/${i}.jpg`}
         alt="Photo of Justin (that's me, the narrator), looking fantastic"
         width="250"
