@@ -9,11 +9,24 @@ import { useTheme } from "next-themes";
 const interBold = Inter({ subsets: ["latin"], weight: '700' });
 
 export default function Home() {
-  const [hoverText, setHoverText] = useState('');
   const { setTheme, resolvedTheme } = useTheme();
+
+  const [hoverText, setHoverText] = useState('');
   const [mounted, setMounted] = useState(false);
+  const [nataImage, setNataImage] = useState('/surprise.jpg');
 
   useEffect(() => setMounted(true), []);
+
+  function getRandomImage() {
+    const random = 1 + Math.floor(Math.random() * 13);
+    const imageUrl = `/cat/${random}.jpg`;
+    if (imageUrl == nataImage) {
+      //if we randomly got the same int, just progress to the next
+      setNataImage(`/cat/${random + 1}.jpg`);
+    } else {
+      setNataImage(`/cat/${random}.jpg`);
+    }
+  }
 
   return (
     <div>
@@ -35,23 +48,24 @@ export default function Home() {
                   (<MoonIcon className="w-8 h-8 cursor-pointer" onClick={() => setTheme('dark')} />)
             }
           </div>
-          <div className="text-center pt-20 max-md:pt-0">
-            <div className="flex justify-center py-5" >
+          <div className="flex flex-col justify-center text-center pt-20 max-md:pt-0">
+            <div className="order-2 flex peer justify-center pt-2 pb-5 " >
               <Image
-                className="rounded-3xl max-md:w-40 max-md:h-40 w-150 h-150"
-                src={"/surprise.jpg"}
+                className="rounded-3xl max-md:w-50 max-md:h-50 w-150 h-150"
+                src={nataImage}
                 alt="Photo of Justin (that's me, the narrator), looking fantastic"
                 width="250"
                 height="250"
+                onClick={() => getRandomImage()}
               />
             </div>
-            <h2 className={`text-3xl md:text-5xl lg:text-5xl py-2 text-teal-800 ${interBold.className} dark:text-emerald-400`}>Justin Auger</h2>
-            <h3 className="text-1xl md:text-2xl py-2 pb-2 dark:text-white">Software Engineer</h3>
-            {/* <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200">
-              Hi, my name's Justin and I'm a SWE based in NYC
-            </p> */}
+            <div className="order-1 flex justify-center invisible transition ease-in-out duration-500 peer-has-[:hover]:-translate-y-2 peer-has-[:hover]:visible">
+              click on Nata for a surprise!
+            </div>
+            <h2 className={`order-3 text-3xl md:text-5xl lg:text-5xl py-2 text-teal-800 ${interBold.className} dark:text-emerald-400`}>Justin Auger</h2>
+            <h3 className="order-4 text-1xl md:text-2xl py-2 pb-2 dark:text-white">Software Engineer</h3>
           </div>
-          <div className="flex justify-center gap-10 pt-5 text-gray-800">
+          <div className="flex justify-center gap-10 pt-5 text-gray-800 peer">
             <Link href="mailto:justin@auger.dev">
               <EnvelopeIcon
                 className="w-8 h-8 md:w-10 md:h-10 cursor-pointer hover:text-teal-700 dark:text-white dark:hover:text-emerald-400"
@@ -85,6 +99,7 @@ export default function Home() {
               />
             </Link>
           </div>
+          {/* sadly not using peer here as I want to set the hover text and peer-has-a[:hover] won't tell me which one I'm hovering over */}
           {hoverText && <div className='flex justify-center pt-5 text-teal-800 dark:text-emerald-400'>
             {hoverText}
           </div>}
