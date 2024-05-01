@@ -23,7 +23,7 @@ export default function Nata() {
     }
 
     return (
-        <div className="order-2 flex peer justify-center pt-2 pb-5 ">
+        <div className="order-2 z-10 flex peer justify-center pt-2 pb-5 ">
             {images[nataImage]}
         </div>
     );

@@ -41,7 +41,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-center text-center pt-10 max-md:pt-0">
             <Nata />
-            <div className="order-1 flex justify-center invisible transition ease-in-out duration-500 peer-has-[:hover]:-translate-y-2 peer-has-[:hover]:visible">
+            <div className="order-1 relative z-0 top-10 transition ease-in-out duration-500 peer-has-[:hover]:-translate-y-10">
               click on Nata for a surprise!
             </div>
             <h2 className={`order-3 text-3xl md:text-5xl lg:text-5xl py-2 pb-4 text-teal-800 ${groteskBold.className} dark:text-emerald-400`}>Justin Auger</h2>
