@@ -88,7 +88,7 @@ export default function Home() {
             </div>
             <div className="flex justify-center pb-5">
               <p className="text-sm text-gray-700 dark:text-stone-400">
-                thanks for stoppin' by
+                thanks for stoppin&apos; by
               </p>
             </div>
           </div>
