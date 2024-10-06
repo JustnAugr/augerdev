@@ -88,7 +88,7 @@ export default function Home() {
             </div>
             <div className="flex justify-center pb-5">
               <p className="text-sm text-gray-700 dark:text-stone-400">
-                brought to us by next.js
+                thanks for stoppin' by
               </p>
             </div>
           </div>
