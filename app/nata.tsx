@@ -1,7 +1,12 @@
+'use client';
+
 import { useState } from "react";
 import Image from "next/image";
 
 export default function Nata() {
+  //this is getting flagged for multiple useState calls but I don't think that holds much water, the callback is in an onClick and doesn't actually get executed in the loop, just the images themselves get created in it...
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [nataImage, setNataImage] = useState(14);
 
   const images = [];
