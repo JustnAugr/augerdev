@@ -11,7 +11,7 @@ export default function Nata() {
     images.push(
       <img
         className="rounded-3xl max-md:max-w-50 max-md:max-h-50 max-w-80 max-h-80 min-w-60 min-h-60 hover:cursor-pointer"
-        src={`/cat/${i}.jpg`}
+        src={`cat/${i}.jpg`}
         alt="Photo of Justin (that's me, the narrator), looking fantastic"
         onClick={() => {
           let random = 1 + Math.floor(Math.random() * 13);
