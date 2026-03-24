@@ -55,7 +55,7 @@ function App() {
       <main className="bg-slate-50 px-10 bg-linear-to-b to-white from-teal-50 dark:to-stone-800 dark:from-stone-900">
         <section className="flex min-h-svh flex-col">
           <div className="pt-5 md:pt-10 mb-5 md:mb-12 flex justify-between">
-            <div className="flex">
+            <div className="flex font-semibold">
               <h1 className="dark:text-white">justin</h1>
               <h1 className="text-teal-800 dark:text-emerald-400">@</h1>
               <h1 className="dark:text-white">auger.dev</h1>
@@ -81,7 +81,7 @@ function App() {
                 click on Nata for a surprise!
               </div>
               <h2
-                className={`order-3 text-3xl md:text-5xl lg:text-5xl md:py-2 pb-2 md:pb-4 text-teal-800 dark:text-emerald-400`}
+                className={`order-3 text-3xl md:text-5xl lg:text-5xl md:py-2 pb-2 md:pb-4 text-teal-800 dark:text-emerald-400 font-semibold`}
               >
                 Justin Auger
               </h2>
