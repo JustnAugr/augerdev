@@ -62,7 +62,7 @@ importers:
         specifier: ^8.57.2
         version: 8.57.2(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2)
       vite:
-        specifier: npm:@voidzero-dev/vite-plus-core@^0.1.13
+        specifier: npm:@voidzero-dev/vite-plus-core@latest
         version: '@voidzero-dev/vite-plus-core@0.1.13(@types/node@25.5.0)(jiti@2.6.1)(typescript@6.0.2)'
       vite-plus:
         specifier: latest
